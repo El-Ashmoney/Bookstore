@@ -16,4 +16,5 @@
 <script src="admin/assets/plugins/Chart.js/Chart.min.js"></script>
 
 <!-- Index js -->
+<script src="admin/assets/js/all.min.js"></script>
 <script src="admin/assets/js/index.js"></script>

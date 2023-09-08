@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a href="forms.html">
+            <a href="{{ Route('categories') }}">
                 <i class="zmdi zmdi-format-list-bulleted"></i> <span>Categories</span>
             </a>
         </li>

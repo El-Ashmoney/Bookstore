@@ -16,15 +16,17 @@
         <ul class="navbar-nav align-items-center right-nav-link">
             <li class="nav-item dropdown-lg">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-                <i class="fa fa-envelope-open-o"></i></a>
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </li>
             <li class="nav-item dropdown-lg">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-                <i class="fa fa-bell-o"></i></a>
+                    <i class="fa-solid fa-bell"></i>
+                </a>
             </li>
             <li class="nav-item language">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-                    <i class="fa fa-flag"></i>
+                    <i class="fa-solid fa-flag"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
                     <li class="dropdown-item"> <i class="flag-icon flag-icon-gb mr-2"></i> English</li>

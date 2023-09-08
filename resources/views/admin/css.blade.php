@@ -21,5 +21,7 @@
 <link href="admin/assets/css/icons.css" rel="stylesheet" type="text/css"/>
 <!-- Sidebar CSS-->
 <link href="admin/assets/css/sidebar-menu.css" rel="stylesheet"/>
+<!-- Fontawsome CSS-->
+<link href="admin/assets/css/all.min.css" rel="stylesheet" type="text/css"/>
 <!-- Custom Style-->
 <link href="admin/assets/css/app-style.css" rel="stylesheet"/>
