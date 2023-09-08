@@ -13,8 +13,8 @@
             </a>
         </li>
         <li>
-            <a href="icons.html">
-                <i class="zmdi zmdi-book"></i> <span>Books</span>
+            <a href="#">
+                <i class="fa-solid fa-book" style="margin-right: 10px"></i> <span>Books</span>
             </a>
         </li>
         <li>
@@ -23,13 +23,13 @@
             </a>
         </li>
         <li>
-            <a href="tables.html">
-                <i class="zmdi zmdi-grid"></i> <span>Users</span>
+            <a href="#">
+                <i class="fa-solid fa-users" style="margin-right: 10px"></i> <span>Users</span>
             </a>
         </li>
         <li>
-            <a href="calendar.html">
-                <i class="zmdi zmdi-calendar-check"></i> <span>Instructors</span>
+            <a href="#">
+                <i class="fa-solid fa-chalkboard-user" style="margin-right: 10px"></i> <span>Instructors</span>
                 <small class="badge float-right badge-light">New</small>
             </a>
         </li>

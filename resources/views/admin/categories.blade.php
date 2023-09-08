@@ -36,7 +36,7 @@
                                             <input type="text" class="form-control form-control-rounded" id="input-6" name="name" placeholder="Enter Category Name" required>
                                         </div>
                                         <div class="form-group text-center">
-                                            <input type="submit" class="btn btn-light btn-round px-5" name="submit" value="Add Category"></input>
+                                            <button type="submit" class="btn btn-light btn-round px-5"><i class="fa fa-plus"></i> Add Category</button>
                                         </div>
                                     </form>
                                 </div>
@@ -62,7 +62,9 @@
                                                                     @if(Auth::user()->is_admin == 0)
                                                                         {{--  --}}
                                                                     @else
-                                                                        <a href="{{ url('edit_category',$category->id) }}" class="btn btn-light btn-round px-5"> <i class="mdi mdi-tooltip-edit"></i>Edit</a>
+                                                                        <a href="{{ url('edit_category',$category->id) }}" class="btn btn-light btn-round px-5">
+                                                                            <i class="mdi mdi-tooltip-edit"></i>Edit
+                                                                        </a>
                                                                         <a href="{{ url('delete_category',$category->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
                                                                             <i class="mdi mdi-delete-forever"></i>Delete
                                                                         </a>

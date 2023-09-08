@@ -10,7 +10,7 @@
 <!--favicon-->
 <link rel="icon" href="admin/assets/images/favicon.ico" type="image/x-icon">
 <!-- Vector CSS -->
-<link href="admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+<link href="admin/assets/plugins/vectormap/jquery-jvectormap.css" rel="stylesheet"/>
 <!-- simplebar CSS-->
 <link href="admin/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
 <!-- Bootstrap core CSS-->
