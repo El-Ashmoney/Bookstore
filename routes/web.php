@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Web\BookController;
+use App\Http\Controllers\Web\WebController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +29,4 @@ Route::middleware([
 });
 
 // Web routes
-Route::get('/bookstore', [BookController::class, 'index']);
+Route::get('/bookstore', [WebController::class, 'index']);
