@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.index');
+        if(Auth::user()->is_admin == 1){
+            return view('admin.index');
+        }else{
+            abort(403, 'Unauthorized Access');
+        }
     }
 }

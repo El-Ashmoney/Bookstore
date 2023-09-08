@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-md-between justify-content-evenly py-4">
             <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
-                <p class="fs--1 my-2 fw-light text-200">All rights Reserved &copy; Your Company, 2021</p>
+                <p class="fs--1 my-2 fw-light text-200">All rights Reserved &copy; Eduprix | Bookstore, 2023</p>
             </div>
             <div class="col-12 col-sm-8 col-md-6">
                 <p class="fs--1 fw-light my-2 text-center text-md-end text-200"> Made with&nbsp;

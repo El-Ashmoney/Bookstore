@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\BookController;
-use App\Http\Controllers\Admin\AdminController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +14,7 @@ use App\Http\Controllers\Admin\AdminController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.index');
 });
 
 Route::middleware([
@@ -30,6 +28,4 @@ Route::middleware([
 });
 
 // Web routes
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/bookstore', [BookController::class, 'index']);
-});
+Route::get('/bookstore', [BookController::class, 'index']);

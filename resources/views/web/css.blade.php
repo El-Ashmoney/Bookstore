@@ -5,7 +5,7 @@
 <!-- ===============================================-->
 <!--    Document Title-->
 <!-- ===============================================-->
-<title>Bookstore | Free Books</title>
+<title>Eduprix | Bookstore</title>
 
 <!-- ===============================================-->
 <!--    Favicons-->
@@ -27,6 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="web/vendors/prism/prism.css" rel="stylesheet">
 <link href="web/assets/css/theme.css" rel="stylesheet" />
+<link href="web/assets/css/icons.css" rel="stylesheet" type="text/css"/>
+<link href="web/assets/css/all.min.css" rel="stylesheet" type="text/css"/>
 <link href="web/assets/css/user.css" rel="stylesheet" />
-
 <link href="web/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
