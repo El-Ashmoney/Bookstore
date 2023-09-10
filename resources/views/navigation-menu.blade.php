@@ -15,6 +15,18 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if (auth()->check() && Auth::user()->is_admin != 1)
+                        <x-nav-link href="{{ route('bookstore') }}" :active="request()->routeIs('bookstore')">
+                            {{ __('Bookstore') }}
+                        </x-nav-link>
+                    @else
+                        <x-nav-link href="{{ route('bookstore') }}" :active="request()->routeIs('bookstore')">
+                            {{ __('Bookstore') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('bookstore_admin') }}" :active="request()->routeIs('bookstore_admin')" target="_blank">
+                            {{ __('Bookstore Admin') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 

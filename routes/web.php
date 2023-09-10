@@ -29,4 +29,4 @@ Route::middleware([
 });
 
 // Web routes
-Route::get('/bookstore', [WebController::class, 'index']);
+Route::get('/bookstore', [WebController::class, 'index'])->name('bookstore');
