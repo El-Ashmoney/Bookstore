@@ -17,7 +17,7 @@
             <div class="clearfix"></div>
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    <!--Start Category Content-->
+                    <!--Start User Content-->
                     <section class="categories container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -27,45 +27,48 @@
                                         {{ session()->get('message') }}
                                     </div>
                                 @endif
-                                <h2 class="categories_heading">Categories</h2>
-                                <div class="add_category">
-                                    <form method="POST" action="{{ url('add_category') }}" enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group">
-                                            <label for="input-6">Category Name</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" placeholder="Enter Category Name" required>
-                                        </div>
-                                        <div class="form-group text-center">
-                                            <button type="submit" class="btn btn-light btn-round px-5"><i class="fa fa-plus"></i> Add Category</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <h2 class="categories_heading">Users</h2>
+                                {{-- <div class="add_category text-center">
+
+                                </div> --}}
                                 <div class="show_categories">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title text-center">Categories Table</h5>
+                                            <h5 class="card-title text-center">Users Table</h5>
                                             <div class="table-responsive">
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">ID</th>
-                                                            <th scope="col">Category Name</th>
+                                                            <th scope="col">User Name</th>
+                                                            <th scope="col">Email</th>
+                                                            <th scope="col">User Type</th>
                                                             <th scope="col">Control</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($categories as $category)
+                                                        @foreach ($users as $user)
                                                             <tr>
-                                                                <th scope="row">{{ $category->id }}</th>
-                                                                <td>{{ $category->name }}</td>
+                                                                <th scope="row">{{ $user->id }}</th>
+                                                                <td>{{ $user->name }}</td>
+                                                                <td>{{ $user->email }}</td>
                                                                 <td>
-                                                                    @if(Auth::user()->is_admin == 0)
+                                                                    @if ($user->is_admin == 0)
+                                                                        <p style="color: #FFF">Normal user</p>
+                                                                    @elseif($user->is_admin == 1)
+                                                                        <p style="color: #ffd32a">Admin</p>
+                                                                    @elseif($user->is_admin == 2)
+                                                                        <p style="color: #0be881">Instructor</p>
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    @if(in_array(Auth::user()->is_admin, [0, 2]))
                                                                         <small style="color: red">Unauthorized</small>
                                                                     @else
-                                                                        <a href="{{ url('edit_category',$category->id) }}" class="btn btn-light btn-round px-5">
+                                                                        <a href="{{ url('edit_user',$user->id) }}" class="btn btn-light btn-round px-5">
                                                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                                                         </a>
-                                                                        <a href="{{ url('delete_category',$category->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
+                                                                        <a href="{{ url('delete_user',$user->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
                                                                             <i class="fa-solid fa-trash-can"></i> Delete
                                                                         </a>
                                                                     @endif
@@ -81,7 +84,7 @@
                             </div>
                         </div>
                     </section>
-                    <!--End Category Content-->
+                    <!--End User Content-->
 
                     <!--start overlay-->
                     <div class="overlay toggle-menu"></div>

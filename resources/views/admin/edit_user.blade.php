@@ -18,7 +18,7 @@
             <div class="clearfix"></div>
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    <!--Start Category Content-->
+                    <!--Start User Content-->
                     <section class="categories container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -28,23 +28,31 @@
                                         {{ session()->get('message') }}
                                     </div>
                                 @endif
-                                <h2 class="categories_heading">Edit Category ({{ $categories->name }})</h2>
+                                <h2 class="categories_heading">Edit User: ( {{ $user->name }} )</h2>
                                 <div class="add_category">
-                                    <form method="POST" action="{{ url('update_category', $categories->id) }}" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ url('update_user', $user->id) }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="input-6">Category Name</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" value="{{ $categories->name }}" required>
+                                            <label for="input-6">user Name</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" value="{{ $user->name }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input-7">Email</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-7" name="email" value="{{ $user->email }}" autocomplete="off" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input-6">user Type</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="userType" value="{{ $user->is_admin }}" required>
                                         </div>
                                         <div class="form-group text-center">
-                                            <button type="submit" class="btn btn-light btn-round px-5"><i class="fa-solid fa-pen-to-square"></i> Update Category</button>
+                                            <button type="submit" class="btn btn-light btn-round px-5"><i class="fa-solid fa-pen-to-square"></i> Update User</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <!--End Category Content-->
+                    <!--End User Content-->
 
                     <!--start overlay-->
                     <div class="overlay toggle-menu"></div>

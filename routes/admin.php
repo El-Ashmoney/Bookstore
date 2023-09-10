@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     // Dashboard Logic
     Route::get('/bookstore_admin', [AdminController::class, 'index'])->name('bookstore_admin');
-    // Category Logic
+    // Category Controller Logic
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
     Route::post('/add_category', [CategoryController::class, 'add_category'])->name('add_category');
     Route::get('/edit_category/{id}', [CategoryController::class, 'edit_category'])->name('edit_category');
     Route::post('/update_category/{id}', [CategoryController::class, 'update_category'])->name('update_category');
     Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category'])->name('delete_category');
+    // User Controller Logic
+    Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::get('/edit_user/{id}', [UserController::class, 'edit_user'])->name('edit_user');
+    Route::post('/update_user/{id}', [UserController::class, 'update_user'])->name('update_user');
+    Route::get('/delete_user/{id}', [UserController::class, 'delete_user'])->name('delete_user');
 });
