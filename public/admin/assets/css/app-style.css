@@ -3656,4 +3656,6 @@ table.grid td {
 .categories .categories_heading{text-align: center;}
 .categories .add_category .form-group{margin-bottom: 2rem;}
 .categories .add_category .form-group button i{font-size: 15px;}
-.categories .show_categories{margin-top: 100px;}
+.show_categories{margin-top: 100px;}
+.show-books .card .table td, .card .table th{padding-right: 1rem; padding-left: 1rem;}
+/* .show-books .card .table .description{ max-width: 190px; overflow: hidden;} */

@@ -62,10 +62,10 @@
                                                                     @if(Auth::user()->is_admin == 0)
                                                                         <small style="color: red">Unauthorized</small>
                                                                     @else
-                                                                        <a href="{{ url('edit_category',$category->id) }}" class="btn btn-light btn-round px-5">
+                                                                        <a href="{{ Route('edit_category',$category->id) }}" class="btn btn-light btn-round px-5">
                                                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                                                         </a>
-                                                                        <a href="{{ url('delete_category',$category->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
+                                                                        <a href="{{ Route('delete_category',$category->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
                                                                             <i class="fa-solid fa-trash-can"></i> Delete
                                                                         </a>
                                                                     @endif

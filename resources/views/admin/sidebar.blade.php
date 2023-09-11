@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a href="/#">
+            <a href="{{ Route('books') }}">
                 <i class="fa-solid fa-book" style="margin-right: 10px"></i> <span>Books</span>
             </a>
         </li>
@@ -25,11 +25,6 @@
         <li>
             <a href="{{ Route('users') }}">
                 <i class="fa-solid fa-users" style="margin-right: 10px"></i> <span>Users</span>
-            </a>
-        </li>
-        <li>
-            <a href="/#">
-                <i class="fa-solid fa-chalkboard-user" style="margin-right: 10px"></i> <span>Instructors</span>
                 <small class="badge float-right badge-light">New</small>
             </a>
         </li>

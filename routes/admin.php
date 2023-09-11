@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\admin\BookController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\UserController;
 
@@ -31,9 +32,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/edit_category/{id}', [CategoryController::class, 'edit_category'])->name('edit_category');
     Route::post('/update_category/{id}', [CategoryController::class, 'update_category'])->name('update_category');
     Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category'])->name('delete_category');
+
     // User Controller Logic
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('/edit_user/{id}', [UserController::class, 'edit_user'])->name('edit_user');
     Route::post('/update_user/{id}', [UserController::class, 'update_user'])->name('update_user');
     Route::get('/delete_user/{id}', [UserController::class, 'delete_user'])->name('delete_user');
+
+    // Book Controller Logic
+    Route::get('/books', [BookController::class, 'index'])->name('books');
+    Route::post('/add_book', [BookController::class, 'add_book'])->name('add_book');
 });

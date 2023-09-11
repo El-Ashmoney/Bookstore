@@ -40,7 +40,7 @@
                     <p class="mb-0 me-3 text-primary text-end fw-bolder lh-1 opacity-50">SEARCH <br />ANYTHING</p>
                     <form>
                         <div class="input-group d-flex flex-end-center">
-                            <input class="form-control form-eduprixsearch-control rounded-pill" id="formGroupExampleInput" type="text" placeholder="Ex: Programming" />
+                            <input class="form-control form-eduprixsearch-control rounded-pill" id="formGroupExampleInput" type="text" placeholder="Ex: Computer Science" />
                             <img class="input-box-icon" src="web/assets/img/illustrations/search.png" width="36" alt="" />
                         </div>
                     </form>
