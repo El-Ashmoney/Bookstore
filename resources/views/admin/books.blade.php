@@ -46,6 +46,7 @@
                                                                 <th scope="col">Description</th>
                                                                 <th scope="col">Price</th>
                                                                 <th scope="col">Category</th>
+                                                                <th scope="col">Book Upload</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -68,6 +69,9 @@
                                                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                                         @endforeach
                                                                     </select>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="file" class="form-control form-control-rounded" name="book_file" accept=".pdf" required>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -102,22 +106,21 @@
                                             @foreach ($books as $book)
                                                 <tr>
                                                     <th scope="row">{{ $book->id }}</th>
-                                                    <td>{{ $book->title }}</td>
-                                                    <td>{{ $book->author }}</td>
-                                                    <td class="description">{{ Str::limit($book->description, 80, '...') }}</td>
+                                                    <td>{{ Str::limit($book->title, 30, '...') }}</td>
+                                                    <td>{{ Str::limit($book->author, 30, '...') }}</td>
+                                                    <td>{{ Str::limit($book->description, 30, '...') }}</td>
                                                     <td>${{ $book->price }}</td>
                                                     <td>{{ $book->category->name }}</td>
                                                     <td>
-                                                        @if(Auth::user()->is_admin == 0)
-                                                            <small style="color: red">Unauthorized</small>
-                                                        @else
-                                                            <a href="{{ url('edit_book',$book->id) }}" class="btn btn-light btn-round px-5">
-                                                                <i class="fa-solid fa-pen-to-square"></i> Edit
-                                                            </a>
-                                                            <a href="{{ url('delete_book',$book->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
-                                                                <i class="fa-solid fa-trash-can"></i> Delete
-                                                            </a>
-                                                        @endif
+                                                        <a href="{{ asset('storage/' . $book->book_file) }}" class="btn btn-light btn-round px-5" download>
+                                                            <i class="fa-solid fa-download"></i> Download
+                                                        </a>
+                                                        <a href="{{ url('edit_book',$book->id) }}" class="btn btn-light btn-round px-5">
+                                                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                                                        </a>
+                                                        <a href="{{ url('delete_book',$book->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
+                                                            <i class="fa-solid fa-trash-can"></i> Delete
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endforeach

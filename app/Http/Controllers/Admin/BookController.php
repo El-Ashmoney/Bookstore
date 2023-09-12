@@ -21,6 +21,9 @@ class BookController extends Controller
     }
 
     public function add_book(Request $request){
+        $request->validate([
+            'book_file' => 'required|mimes:pdf|max:40960'  // max size of 10MB for the PDF
+        ]);
         if (Auth()->check() && Auth::user()->is_admin != 1){
             abort(403, 'Unauthorized Access');
         }else{
@@ -30,6 +33,12 @@ class BookController extends Controller
             $book->description  = $request->description;
             $book->price        = $request->price;
             $book->category_id  = $request->category_id;
+            if ($request->hasFile('book_file')) {
+                $bookFile = $request->file('book_file');
+                $filename = time() . '.' . $bookFile->getClientOriginalExtension();
+                $bookFile->storeAs('books', $filename, 'public');  // Store in 'books' directory inside 'storage/app/public'
+                $book->book_file = 'books/' . $filename;
+            }
             $book->save();
             return redirect()->back()->with('message', 'Book Added Successfully');
         }
