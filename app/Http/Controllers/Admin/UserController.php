@@ -36,7 +36,7 @@ class UserController extends Controller
             $user->email    = $request->email;
             $user->is_admin = $request->userType;
             $user->save();
-            return redirect()->back()->with('message', 'User Updated Successfully');
+            return redirect()->route('users')->with('message', 'User Updated Successfully');
         }
     }
 

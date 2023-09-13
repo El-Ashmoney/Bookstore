@@ -52,17 +52,13 @@ class CategoryController extends Controller
             $categories = Category::find($id);
             $categories->name = $request->name;
             $categories->save();
-            return redirect()->back()->with('message', 'Category Updated Successfully');
+            return redirect()->route('categories')->with('message', 'Category Updated Successfully');
         }
     }
 
     public function delete_category($id){
-        if (Auth()->check() && Auth::user()->is_admin !=1){
-            abort(403, 'Unauthorized Access');
-        }else{
-            $categories = Category::find($id);
-            $categories->delete();
-            return redirect()->back()->with('message', 'Category Deleted Successfully');
-        }
+        $categories = Category::find($id);
+        $categories->delete();
+        return redirect()->back()->with('message', 'Category Deleted Successfully');
     }
 }

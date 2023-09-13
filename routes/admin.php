@@ -42,4 +42,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     // Book Controller Logic
     Route::get('/books', [BookController::class, 'index'])->name('books');
     Route::post('/add_book', [BookController::class, 'add_book'])->name('add_book');
+    Route::get('/edit_book/{id}', [BookController::class, 'edit_book'])->name('edit_book');
+    Route::post('/update_book/{id}', [BookController::class, 'update_book'])->name('update_book');
+    Route::get('/delete_book/{id}', [BookController::class, 'delete_book'])->name('delete_book');
 });
