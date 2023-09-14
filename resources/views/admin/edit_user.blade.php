@@ -33,16 +33,21 @@
                                     <form method="POST" action="{{ url('update_user', $user->id) }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="input-6">user Name</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" value="{{ $user->name }}" required>
+                                            <label for="input-1">user Name</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-1" name="name" value="{{ $user->name }}" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="input-7">Email</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-7" name="email" value="{{ $user->email }}" autocomplete="off" required>
+                                            <label for="input-2">Email</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-2" name="email" value="{{ $user->email }}" autocomplete="off" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="input-6">user Type</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="userType" value="{{ $user->is_admin }}" required>
+                                            <label for="select-1">user Type</label>
+                                            {{-- <input type="text" class="form-control form-control-rounded" id="input-3" name="userType" value="{{ $user->role }}" required> --}}
+                                            <select name="role" class="form-control form-control-rounded" id="select-1" required>
+                                                <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                                                <option value="instructor" {{ $user->role == 'instructor' ? 'selected' : '' }}>Instructor</option>
+                                                <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>User</option>
+                                            </select>
                                         </div>
                                         <div class="form-group text-center">
                                             <button type="submit" class="btn btn-light btn-round px-5"><i class="fa-solid fa-pen-to-square"></i> Update User</button>

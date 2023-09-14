@@ -53,17 +53,17 @@
                                                                 <td>{{ $user->name }}</td>
                                                                 <td>{{ $user->email }}</td>
                                                                 <td>
-                                                                    @if ($user->is_admin == 0)
+                                                                    @if ($user->role === 'user')
                                                                         <p style="color: #FFF">Normal user</p>
-                                                                    @elseif($user->is_admin == 1)
+                                                                    @elseif($user->role === 'admin')
                                                                         <p style="color: #ffd32a">Admin</p>
-                                                                    @elseif($user->is_admin == 2)
+                                                                    @elseif($user->role === 'instructor')
                                                                         <p style="color: #0be881">Instructor</p>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if(in_array(Auth::user()->is_admin, [0, 2]))
-                                                                        <small style="color: red">Unauthorized</small>
+                                                                    @if(in_array(Auth::user()->role, ['user', 'instructor']))
+                                                                        <smail style="color: red; font-weight: bold">Unauthorized</smail>
                                                                     @else
                                                                         <a href="{{ url('edit_user',$user->id) }}" class="btn btn-light btn-round px-5">
                                                                             <i class="fa-solid fa-pen-to-square"></i> Edit

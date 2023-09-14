@@ -59,7 +59,7 @@
                                                                 <th scope="row">{{ $category->id }}</th>
                                                                 <td>{{ $category->name }}</td>
                                                                 <td>
-                                                                    @if(Auth::user()->is_admin == 0)
+                                                                    @if(Auth::user()->role !== 'admin')
                                                                         <small style="color: red">Unauthorized</small>
                                                                     @else
                                                                         <a href="{{ Route('edit_category',$category->id) }}" class="btn btn-light btn-round px-5">

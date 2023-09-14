@@ -8,7 +8,7 @@
             </div>
             <div class="header-profile col-auto order-2 d-none d-sm-block">
                 @if(Auth::user())
-                    @if (Auth::user()->is_admin == 1)
+                    @if (Auth::user()->role === 'admin' || Auth::user()->role === 'instructor')
                         <a class="nav-link" href="{{ route('profile.show') }}">
                             <i class="fa-solid fa-crown me-2" style="color:#fed42d"></i>{{ Auth::user()->name }}
                         </a>

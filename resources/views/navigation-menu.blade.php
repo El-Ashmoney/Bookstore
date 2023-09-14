@@ -15,7 +15,7 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    @if (auth()->check() && Auth::user()->is_admin != 1)
+                    @if (auth()->check() && Auth::user()->role === 'user')
                         <x-nav-link href="{{ route('bookstore') }}" :active="request()->routeIs('bookstore')">
                             {{ __('Bookstore') }}
                         </x-nav-link>

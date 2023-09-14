@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class CategoryController extends Controller
 {
     public function index(){
-        if (auth()->check() && Auth::user()->is_admin == 1){
+        if (Auth::user()->role === 'admin' || Auth::user()->role === 'instructor'){
             $categories = Category::all();
             return view('admin.categories', compact('categories'));
         }else{
@@ -21,23 +21,18 @@ class CategoryController extends Controller
     }
 
     public function add_category(Request $request){
-        if(auth()->check() && Auth::user()->is_admin != 1){
+        if(auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
+        }else{
+            $categories = new Category;
+            $categories->name = $request->name;
+            $categories->save();
+            return redirect()->back()->with('message', 'Category Added Successfully');
         }
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-        $categories = new Category;
-        $categories->name = $request->name;
-        $categories->save();
-        return redirect()->back()->with('message', 'Category Added Successfully');
     }
 
     public function edit_category($id){
-        if (auth()->check() && Auth::user()->is_admin != 1){
+        if (auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
         }else{
             $categories = Category::find($id);
@@ -46,7 +41,7 @@ class CategoryController extends Controller
     }
 
     public function update_category(Request $request, $id){
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
         }else{
             $categories = Category::find($id);

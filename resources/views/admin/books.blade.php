@@ -112,13 +112,13 @@
                                                     <td>${{ $book->price }}</td>
                                                     <td>{{ $book->category->name }}</td>
                                                     <td>
-                                                        <a href="{{ asset('storage/' . $book->book_file) }}" class="btn btn-light btn-round px-5" download>
+                                                        <a href="{{ asset('storage/' . $book->book_file) }}" class="btn btn-light btn-round" download>
                                                             <i class="fa-solid fa-download"></i> Download
                                                         </a>
-                                                        <a href="{{ url('edit_book',$book->id) }}" class="btn btn-light btn-round px-5">
+                                                        <a href="{{ url('edit_book',$book->id) }}" class="btn btn-light btn-round">
                                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                                         </a>
-                                                        <a href="{{ url('delete_book',$book->id) }}" class="btn btn-danger btn-round px-5" onclick="return confirm('Are You Sure!')">
+                                                        <a href="{{ url('delete_book',$book->id) }}" class="btn btn-danger btn-round" onclick="return confirm('Are You Sure!')">
                                                             <i class="fa-solid fa-trash-can"></i> Delete
                                                         </a>
                                                     </td>

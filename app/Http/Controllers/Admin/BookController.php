@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class BookController extends Controller
 {
     public function index(){
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
         }else{
             $categories = Category::all();
@@ -25,7 +25,7 @@ class BookController extends Controller
         $request->validate([
             'book_file' => 'required|mimes:pdf|max:40960'  // max size of 10MB for the PDF
         ]);
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
         }else{
             $book = new Book;
@@ -46,7 +46,7 @@ class BookController extends Controller
     }
 
     public function edit_book($id){
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
         }else{
             $book = Book::find($id);
@@ -59,7 +59,7 @@ class BookController extends Controller
         $request->validate([
             'book_file' => 'sometimes|mimes:pdf|max:40960'  // max size of 10MB for the PDF
         ]);
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
         }else{
             $book = Book::find($id);

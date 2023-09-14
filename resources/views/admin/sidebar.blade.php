@@ -23,10 +23,12 @@
             </a>
         </li>
         <li>
-            <a href="{{ Route('users') }}">
-                <i class="fa-solid fa-users" style="margin-right: 10px"></i> <span>Users</span>
-                <small class="badge float-right badge-light">New</small>
-            </a>
+            @if(Auth::user()->role === 'admin')
+                <a href="{{ Route('users') }}">
+                    <i class="fa-solid fa-users" style="margin-right: 10px"></i> <span>Users</span>
+                    <small class="badge float-right badge-light">New</small>
+                </a>
+            @endif
         </li>
         <li class="sidebar-header">LABELS</li>
         <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>

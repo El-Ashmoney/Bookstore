@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function index(){
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth()->check() && (Auth::user()->role === 'user' || Auth::user()->role === 'instructor')){
             abort(403, 'Unauthorized Access');
         }else{
             $users = User::all();
@@ -19,7 +19,7 @@ class UserController extends Controller
     }
 
     public function edit_user($id){
-        if (Auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth::user()->role === 'user' || Auth::user()->role === 'instructor'){
             abort(403, 'Unauthorized Access');
         }else{
             $user = User::find($id);
@@ -28,20 +28,20 @@ class UserController extends Controller
     }
 
     public function update_user(Request $request, $id){
-        if (auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth::user()->role === 'user' || Auth::user()->role === 'instructor'){
             abort(403, 'Unauthorized Access');
         }else{
             $user = User::find($id);
             $user->name     = $request->name;
             $user->email    = $request->email;
-            $user->is_admin = $request->userType;
+            $user->role     = $request->role;
             $user->save();
             return redirect()->route('users')->with('message', 'User Updated Successfully');
         }
     }
 
     public function delete_user($id){
-        if (auth()->check() && Auth::user()->is_admin != 1){
+        if (Auth::user()->role === 'user' || Auth::user()->role === 'instructor'){
             abort(403, 'Unauthorized Access');
         }else{
             $user = User::find($id);
