@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebController;
+use App\Http\Controllers\Web\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,6 @@ use App\Http\Controllers\Web\WebController;
 |
 */
 
-Route::get('/', function () {
-    return view('web.index');
-});
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,4 +26,7 @@ Route::middleware([
 });
 
 // Web routes
-Route::get('/bookstore', [WebController::class, 'index'])->name('bookstore');
+Route::get('/', [WebController::class, 'index'])->name('bookstore');
+Route::get('/category/{id}', [WebController::class, 'showCategoryBooks'])->name('categories.books');
+Route::get('/book/{id}', [WebController::class, 'bookDetails'])->name('book.details');
+Route::post('/rate_book/{bookId}', [BookController::class, 'rateBook'])->name('rate.book');

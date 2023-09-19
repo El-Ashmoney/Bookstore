@@ -2,7 +2,7 @@
     <div class="container" id="topNav">
         <div class="row justify-content-between">
             <div class="col-auto">
-                <a class="navbar-brand" href="/bookstore">
+                <a class="navbar-brand" href="/">
                     <img src="web/assets/img/logos/logo.png" width="141" alt="logo" />
                 </a>
             </div>

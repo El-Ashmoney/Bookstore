@@ -8,6 +8,11 @@
     <ul class="sidebar-menu do-nicescrol">
         <li class="sidebar-header">MAIN NAVIGATION</li>
         <li>
+            <a href="{{ Route('bookstore') }}" target="_blank">
+                <i class="fa-solid fa-globe" style="margin-right: 10px"></i> <span>Website</span>
+            </a>
+        </li>
+        <li>
             <a href="{{ Route('bookstore_admin') }}">
                 <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
             </a>
