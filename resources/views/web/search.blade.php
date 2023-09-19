@@ -38,10 +38,10 @@
             <div class="col-auto d-none d-lg-block">
                 <div class="d-flex align-items-center">
                     <p class="mb-0 me-3 text-primary text-end fw-bolder lh-1 opacity-50">SEARCH <br />ANYTHING</p>
-                    <form>
+                    <form action="{{ route('books.search') }}" method="GET">
                         <div class="input-group d-flex flex-end-center">
-                            <input class="form-control form-eduprixsearch-control rounded-pill" id="formGroupExampleInput" type="text" placeholder="Ex: Computer Science" />
-                            <img class="input-box-icon" src="web/assets/img/illustrations/search.png" width="36" alt="" />
+                            <input class="form-control form-eduprixsearch-control rounded-pill" id="formGroupExampleInput" type="text" name="query" placeholder="Ex: Computer Science" />
+                            <img class="input-box-icon" src="web/assets/img/illustrations/search.png" width="39" alt="" />
                         </div>
                     </form>
                 </div>

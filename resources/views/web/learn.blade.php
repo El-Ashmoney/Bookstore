@@ -47,7 +47,7 @@
                         </div>
                         <div class="carousel-item"><img class="d-block w-100" src="web/assets/img/gallery/header-slider-3.png" height="447" alt="..." />
                             <div class="carousel-caption d-none d-sm-block">
-                                <h1 class="display-4 text-light text-start fw-light"> Learn how to<strong> express yourself </strong><br />artistically via engaging courses.</h1>
+                                <h1 class="display-4 text-light text-start fw-light"> Learn how to<strong> express yourself </strong><br />artistically via engaging books.</h1>
                             </div>
                         </div>
                     </div>
