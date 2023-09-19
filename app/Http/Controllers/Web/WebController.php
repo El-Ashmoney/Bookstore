@@ -14,7 +14,8 @@ class WebController extends Controller
         $books      = Book::all();
         $categories = Category::withCount('books')->get();
         $users      = User::all();
-        return view('web.index', compact('books', 'categories', 'users'));
+        $recentBooks = Book::orderBy('created_at', 'desc')->limit(8)->get();
+        return view('web.index', compact('books', 'categories', 'users', 'recentBooks'));
     }
 
     public function showCategoryBooks($id){
@@ -27,4 +28,5 @@ class WebController extends Controller
         $book = Book::findOrFail($id);
         return view('web.book_details', compact('book'));
     }
+
 }
