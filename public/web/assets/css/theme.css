@@ -21217,10 +21217,7 @@ ul {
   color: #11111D;
 }
 
-.list-social-icon:hover {
-  background: #EBEBF5;
-  border-radius: 7px;
-}
+
 
 @media (min-width: 1140px) {
   .carousel-control-prev {

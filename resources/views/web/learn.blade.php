@@ -19,17 +19,17 @@
                         <ul class="list-unstyled list-inline">
                             <li class="list-inline-item mr-2">
                                 <a class="text-decoration-none" href="#!">
-                                    <img class="list-social-icon" src="web/assets/img/icons/instagram.png" width="30" alt="..." />
+                                    <img class="list-social-icon-instagram" src="web/assets/img/icons/instagram.png" width="30" alt="..." />
                                 </a>
                             </li>
                             <li class="list-inline-item mr-2">
                                 <a class="text-decoration-none" href="#!">
-                                    <img class="list-social-icon" src="web/assets/img/icons/facebook.png" width="30" alt="..." />
+                                    <img class="list-social-icon-facebook" src="web/assets/img/icons/facebook.png" width="30" alt="..." />
                                 </a>
                             </li>
                             <li class="list-inline-item mr-2">
                                 <a class="text-decoration-none" href="#!">
-                                    <img class="list-social-icon" src="web/assets/img/icons/twitter.png" width="30" alt="..." />
+                                    <img class="list-social-icon-twitter" src="web/assets/img/icons/twitter.png" width="30" alt="..." />
                                 </a>
                             </li>
                         </ul>
