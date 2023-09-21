@@ -54,5 +54,14 @@ class BookController extends Controller
         return view('web.search_results', ['books' => $books, 'query' => $query, compact('book')]);
     }
 
+    public function allBooks(){
+        $books = Book::all();
+        return view('web.all_books', compact('books'));
+    }
+    
+    public function allRatedBooks(){
+        $books = Book::all();
+        return view('web.all_rated_books', compact('books'));
+    }
 
 }

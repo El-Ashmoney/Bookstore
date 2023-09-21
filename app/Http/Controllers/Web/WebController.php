@@ -11,11 +11,15 @@ use App\Http\Controllers\Controller;
 class WebController extends Controller
 {
     public function index(){
-        $books      = Book::all();
-        $categories = Category::withCount('books')->get();
-        $users      = User::all();
-        $recentBooks = Book::orderBy('created_at', 'desc')->limit(8)->get();
-        return view('web.index', compact('books', 'categories', 'users', 'recentBooks'));
+        $books              = Book::all();
+        $categories         = Category::withCount('books')->get();
+        $users              = User::all();
+        $usersCount         = User::where('role', '=', 'user')->count();
+        $instructorCount    = User::where('role', '=', 'instructor')->count();
+        $recentBooks        = Book::orderBy('created_at', 'desc')->limit(8)->get();
+        $topRatedBooks      = Book::orderBy('rating', 'desc')->limit(8)->get();
+        $topBooks           = Book::where('rating', '=', 5)->count();
+        return view('web.index', compact('books', 'categories', 'users', 'recentBooks', 'topRatedBooks', 'topBooks', 'usersCount', 'instructorCount'));
     }
 
     public function showCategoryBooks($id){

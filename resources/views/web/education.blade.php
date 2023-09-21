@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0">
-                <a class="text-decoration-none" href="#">
+                <a class="text-decoration-none" href="/">
                     <img src="web/assets/img/logos/logo-footer.png" height="75" alt="..." />
                 </a>
                 <p class="text-light my-4">

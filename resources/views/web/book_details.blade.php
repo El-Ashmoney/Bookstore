@@ -23,6 +23,11 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" style="color: #007bff!important">x</button>
                                 {{ session()->get('message') }}
                             </div>
+                        @elseif (session()->has('error'))
+                            <div class="session_message alert alert-danger text-center">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true" style="color: #007bff!important">x</button>
+                                {{ session()->get('error') }}
+                            </div>
                         @endif
                         <h1 class="header-title display-4 header text-start mb-5 text-uppercase">Book: {{ $book->title }}</h1>
                         <div class="col-sm-6 col-lg-3 mb-4">

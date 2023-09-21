@@ -31,3 +31,5 @@ Route::get('/category/{id}', [WebController::class, 'showCategoryBooks'])->name(
 Route::get('/book/{id}', [WebController::class, 'bookDetails'])->name('book.details');
 Route::post('/rate_book/{bookId}', [BookController::class, 'rateBook'])->name('rate.book');
 Route::get('/search', [BookController::class, 'search'])->name('books.search');
+Route::get('/all_books', [BookController::class, 'allBooks'])->name('all.books');
+Route::get('/all_rated_books', [BookController::class, 'allRatedBooks'])->name('all.rated.books');
