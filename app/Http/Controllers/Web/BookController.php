@@ -44,23 +44,13 @@ class BookController extends Controller
         return back()->with('message', 'Thank you for your rating!');
     }
 
-    public function search(Request $request){
-        $query = $request->input('query');
-        $book = Book::all();
-        $books = Book::where('title', 'LIKE', "%{$query}%")
-            ->orWhere('author', 'LIKE', "%{$query}%")
-            ->orWhere('description', 'LIKE', "%{$query}%")
-            ->get();
-        return view('web.search_results', ['books' => $books, 'query' => $query, compact('book')]);
-    }
-
     public function allBooks(){
-        $books = Book::all();
+        $books = Book::paginate(4);
         return view('web.all_books', compact('books'));
     }
-    
+
     public function allRatedBooks(){
-        $books = Book::all();
+        $books = Book::paginate(4);
         return view('web.all_rated_books', compact('books'));
     }
 

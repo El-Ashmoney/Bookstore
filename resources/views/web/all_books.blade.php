@@ -36,6 +36,9 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                <div class="pagination">
+                                    {{ $books->onEachSide(5)->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -100,6 +100,9 @@
                             </div>
                             <hr class="rounded">
                         @endforeach
+                        <div class="pagination">
+                            {{ $books->onEachSide(5)->links() }}
+                        </div>
                     </div>
                 </div>
                 <!-- end of .container-->

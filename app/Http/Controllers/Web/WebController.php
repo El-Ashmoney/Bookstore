@@ -33,4 +33,14 @@ class WebController extends Controller
         return view('web.book_details', compact('book'));
     }
 
+    public function search(Request $request){
+        $query = $request->input('query');
+        $book = Book::all();
+        $books = Book::where('title', 'LIKE', "%{$query}%")
+            ->orWhere('author', 'LIKE', "%{$query}%")
+            ->orWhere('description', 'LIKE', "%{$query}%")
+            ->paginate(4);
+        return view('web.search_results', ['books' => $books, 'query' => $query, compact('book')]);
+    }
+
 }
