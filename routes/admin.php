@@ -26,6 +26,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     // Dashboard Logic
     Route::get('/bookstore_admin', [AdminController::class, 'index'])->name('bookstore_admin');
+    Route::get('/search', [AdminController::class, 'search'])->name('books.search');
+
     // Category Controller Logic
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
     Route::post('/add_category', [CategoryController::class, 'add_category'])->name('add_category');
@@ -45,4 +47,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/edit_book/{id}', [BookController::class, 'edit_book'])->name('edit_book');
     Route::post('/update_book/{id}', [BookController::class, 'update_book'])->name('update_book');
     Route::get('/delete_book/{id}', [BookController::class, 'delete_book'])->name('delete_book');
+
 });
