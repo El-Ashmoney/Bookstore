@@ -33,8 +33,12 @@
                                     <form method="POST" action="{{ url('update_category', $categories->id) }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="input-6">Category Name</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" value="{{ $categories->name }}" required>
+                                            <label for="input-1">Category Name</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-1" name="name" value="{{ $categories->name }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input-2">Category Name</label>
+                                            <input type="file" class="form-control form-control-rounded" name="picture" required>
                                         </div>
                                         <div class="form-group text-center">
                                             <button type="submit" class="btn btn-light btn-round px-5"><i class="fa-solid fa-pen-to-square"></i> Update Category</button>

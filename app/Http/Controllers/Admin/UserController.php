@@ -13,7 +13,7 @@ class UserController extends Controller
         if (Auth()->check() && (Auth::user()->role === 'user' || Auth::user()->role === 'instructor')){
             abort(403, 'Unauthorized Access');
         }else{
-            $users = User::all();
+            $users = User::paginate(8);
             return view('admin.users', compact('users'));
         }
     }

@@ -77,6 +77,9 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
+                                                <div class="pagination">
+                                                    {{ $users->onEachSide(5)->links() }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

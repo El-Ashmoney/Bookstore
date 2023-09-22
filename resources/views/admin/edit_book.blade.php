@@ -59,7 +59,11 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="input-5">Upload Book</label>
+                                            <label for="input-5">Upload Picture</label>
+                                            <input type="file" class="form-control form-control-rounded" name="picture">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="input-5">Upload Book.pdf</label>
                                             <input type="file" class="form-control form-control-rounded" id="input-5" name="book_file" accept=".pdf">
                                         </div>
                                         <div class="form-group text-center">

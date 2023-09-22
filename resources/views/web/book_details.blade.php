@@ -33,9 +33,9 @@
                         <div class="col-sm-6 col-lg-3 mb-4">
                             <div class="card border-0 h-100">
                                 <div class="position-relative">
-                                    <img class="w-100" src="web/assets/img/gallery/art-masterclass.png" alt="courses" />
+                                    <img class="w-100" src="{{ asset('storage/' . $book->picture) }}" alt="Book Image" />
                                     <div class="course-logo">
-                                        <img src="web/assets/img/gallery/moma.png" alt="logo" />
+                                        <img style="width: 60px; position: relative; bottom: -10px" src="{{ asset('storage/' . $book->category->picture) }}" alt="Category Image" />
                                     </div>
                                     <div class="ps-6">
                                         <span class="badge bg-primary rounded-0" style="padding: 11.1px 21px">

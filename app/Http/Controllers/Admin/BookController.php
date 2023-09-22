@@ -16,7 +16,7 @@ class BookController extends Controller
             abort(403, 'Unauthorized Access');
         }else{
             $categories = Category::all();
-            $books = Book::all();
+            $books = Book::paginate(4);
             return view('admin.books', compact('categories', 'books'));
         }
     }
@@ -40,6 +40,10 @@ class BookController extends Controller
                 $bookFile->storeAs('books', $filename, 'public');  // Store in 'books' directory inside 'storage/app/public'
                 $book->book_file = 'books/' . $filename;
             }
+            if ($request->hasFile('picture')) {
+                $path = $request->file('picture')->store('pictures', 'public');
+                $book->picture = $path;
+            }
             $book->save();
             return redirect()->back()->with('message', 'Book Added Successfully');
         }
@@ -57,7 +61,8 @@ class BookController extends Controller
 
     public function update_book(Request $request, $id){
         $request->validate([
-            'book_file' => 'sometimes|mimes:pdf|max:40960'  // max size of 10MB for the PDF
+            'book_file' => 'sometimes|mimes:pdf|max:40960',  // max size of 10MB for the PDF
+            'picture' => 'sometimes|image|max:2048'  // max size of 2MB for the image
         ]);
         if (Auth()->check() && Auth::user()->role === 'user'){
             abort(403, 'Unauthorized Access');
@@ -78,6 +83,16 @@ class BookController extends Controller
                 $bookFile->storeAs('books', $filename, 'public');  // Store in 'books' directory inside 'storage/app/public'
                 $book->book_file = 'books/' . $filename;
             }
+            // Handling the picture upload
+            if ($request->hasFile('picture')) {
+                // If there's an existing picture, delete it
+                if ($book->picture) {
+                    Storage::disk('public')->delete($book->picture);
+                }
+                $picturePath = $request->file('picture')->store('book_pictures', 'public');
+                $book->picture = $picturePath;
+            }
+
             $book->save();
             return redirect()->route('books')->with('message', 'Book Updated Successfully');
         }

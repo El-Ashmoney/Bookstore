@@ -32,8 +32,10 @@
                                     <form method="POST" action="{{ url('add_category') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="input-6">Category Name</label>
-                                            <input type="text" class="form-control form-control-rounded" id="input-6" name="name" placeholder="Enter Category Name" required>
+                                            <label for="input-1">Category Name</label>
+                                            <input type="text" class="form-control form-control-rounded" id="input-1" name="name" style="margin-bottom: 20px" placeholder="Enter Category Name" required>
+                                            <label for="input-2">Category Picture</label>
+                                            <input type="file" class="form-control form-control-rounded" name="picture" required>
                                         </div>
                                         <div class="form-group text-center">
                                             <button type="submit" class="btn btn-light btn-round px-5"><i class="fa fa-plus"></i> Add Category</button>
@@ -74,6 +76,9 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
+                                                <div class="pagination">
+                                                    {{ $categories->onEachSide(5)->links() }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

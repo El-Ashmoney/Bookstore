@@ -12,22 +12,22 @@
                 <i class="fa-solid fa-globe" style="margin-right: 10px"></i> <span>Website</span>
             </a>
         </li>
-        <li>
+        <li class="{{ (Route::currentRouteName()) == 'bookstore_admin' ? 'active' : '' }}">
             <a href="{{ Route('bookstore_admin') }}">
                 <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
-        <li>
+        <li class="{{ (Route::currentRouteName()) == 'books' ? 'active' : '' }}">
             <a href="{{ Route('books') }}">
                 <i class="fa-solid fa-book" style="margin-right: 10px"></i> <span>Books</span>
             </a>
         </li>
-        <li>
+        <li class="{{ (Route::currentRouteName()) == 'categories' ? 'active' : '' }}">
             <a href="{{ Route('categories') }}">
                 <i class="zmdi zmdi-format-list-bulleted"></i> <span>Categories</span>
             </a>
         </li>
-        <li>
+        <li class="{{ (Route::currentRouteName()) == 'users' ? 'active' : '' }}">
             @if(Auth::user()->role === 'admin')
                 <a href="{{ Route('users') }}">
                     <i class="fa-solid fa-users" style="margin-right: 10px"></i> <span>Users</span>

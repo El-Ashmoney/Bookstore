@@ -10,7 +10,7 @@
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                             <div class="card border-100 h-100 shadow">
                                 <div class="card-body p-4 h-100">
-                                    <img class="w-100" src="web/assets/img/gallery/art-craft.png" alt="" />
+                                    <img class="w-100" src="{{ asset('storage/' . $recentBook->picture) }}" alt="Book Image" />
                                     <div class="d-flex justify-content-between mt-3 border-bottom border-100 py-2">
                                         <span class="badge bg-soft-info rounded-1 text-info fw-normal p-2">{{ $recentBook->category->name }}</span>
                                         <p class="mb-0 text-500">{{ \Carbon\Carbon::parse($recentBook->created_at)->format('d M Y') }}

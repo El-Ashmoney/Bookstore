@@ -47,6 +47,7 @@
                                                                 <th scope="col">Price</th>
                                                                 <th scope="col">Category</th>
                                                                 <th scope="col">Book Upload</th>
+                                                                <th scope="col">Picture Upload</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -71,7 +72,10 @@
                                                                     </select>
                                                                 </td>
                                                                 <td>
-                                                                    <input type="file" class="form-control form-control-rounded" name="book_file" accept=".pdf" required>
+                                                                    <input type="file"class="form-control form-control-rounded" name="book_file" accept=".pdf" required>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="file" class="form-control form-control-rounded" name="picture" required>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -107,7 +111,7 @@
                                                 <tr>
                                                     <th scope="row">{{ $book->id }}</th>
                                                     <td>{{ Str::limit($book->title, 30, '...') }}</td>
-                                                    <td>{{ Str::limit($book->author, 30, '...') }}</td>
+                                                    <td>{{ Str::limit($book->author, 25, '...') }}</td>
                                                     <td>{{ Str::limit($book->description, 30, '...') }}</td>
                                                     <td>${{ $book->price }}</td>
                                                     <td>{{ $book->category->name }}</td>
@@ -126,6 +130,9 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="pagination">
+                                        {{ $books->onEachSide(5)->links() }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
