@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebController;
 use App\Http\Controllers\Web\BookController;
+use App\Http\Controllers\web\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::post('/rate_book/{bookId}', [BookController::class, 'rateBook'])->name('r
 Route::get('/web_search', [WebController::class, 'search'])->name('books.search');
 Route::get('/all_books', [BookController::class, 'allBooks'])->name('all.books');
 Route::get('/all_rated_books', [BookController::class, 'allRatedBooks'])->name('all.rated.books');
+Route::post('/subscribe', [NewsletterController::class, 'store'])->name('newsletter.subscribe');
