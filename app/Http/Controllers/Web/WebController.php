@@ -11,15 +11,32 @@ use App\Http\Controllers\Controller;
 class WebController extends Controller
 {
     public function index(){
-        $books              = Book::all();
-        $categories         = Category::withCount('books')->get();
-        $users              = User::all();
-        $usersCount         = User::where('role', '=', 'user')->count();
-        $instructorCount    = User::where('role', '=', 'instructor')->count();
-        $recentBooks        = Book::orderBy('created_at', 'desc')->limit(8)->get();
-        $topRatedBooks      = Book::orderBy('rating', 'desc')->limit(8)->get();
-        $topBooks           = Book::where('rating', '=', 5)->count();
-        return view('web.index', compact('books', 'categories', 'users', 'recentBooks', 'topRatedBooks', 'topBooks', 'usersCount', 'instructorCount'));
+        $books                      = Book::all();
+        $categories                 = Category::withCount('books')->get();
+        $users                      = User::all();
+        $allUsers                   = User::count();
+        $formattedAllUsersCount     = number_format($allUsers);
+        $usersCount                 = User::where('role', '=', 'user')->count();
+        $formattedUsersCount        = number_format($usersCount);
+        $instructorCount            = User::where('role', '=', 'instructor')->count();
+        $formattedInstructorCount   = number_format($instructorCount);
+        $recentBooks                = Book::orderBy('created_at', 'desc')->limit(8)->get();
+        $topRatedBooks              = Book::orderBy('rating', 'desc')->limit(8)->get();
+        $topBooks                   = Book::where('rating', '=', 5)->count();
+        $formattedTopBooks          = number_format($topBooks);
+        return view('web.index',
+            compact(
+                'books',
+                'categories',
+                'users',
+                'recentBooks',
+                'topRatedBooks',
+                'formattedAllUsersCount',
+                'formattedUsersCount',
+                'formattedInstructorCount',
+                'formattedTopBooks'
+            )
+        );
     }
 
     public function showCategoryBooks($id){

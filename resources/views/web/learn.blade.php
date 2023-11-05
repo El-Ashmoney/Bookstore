@@ -64,7 +64,7 @@
                         <div class="card" style="background-color:#2257BF;">
                             <div class="card-body border-bottom border-primary p-2 px-md-4 py-md-3 py-xl-4 p-sm-3">
                                 <div class="d-md-flex flex-between-center">
-                                    <p class="mb-0 text-primary fs-2"><strong>250,998 </strong>people are learning with us</p>
+                                    <p class="mb-0 text-primary fs-2"><strong>{{ $formattedAllUsersCount }} </strong>people are learning with us</p>
                                     <a class="text-decoration-none text-light fw-bold" href="#!" role="button">LEARN MORE
                                     <svg class="bi bi-arrow-right text-primary ms-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
