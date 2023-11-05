@@ -22,7 +22,7 @@
                                 <div class="card border-0 h-100">
                                     <div class="card-body h-100 p-0 pe-4">
                                         <div class="d-flex align-items-start"> <img src="web/assets/img/gallery/rectangle.png" alt="rectangle" />
-                                            <img src="web/assets/img/gallery/student-review.png" alt="testimonials" width="315" />
+                                            <img src="web/assets/img/gallery/student.jpg" alt="testimonials" width="315" />
                                         </div>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                 <div class="bg-holder z-index--1" style="background-image:url(web/assets/img/gallery/quotation.png);background-position:top center;background-size:auto;">
                                 </div>
                                 <!--/.bg-holder-->
-                                <h1 class="fw-normal lh-1 mt-4 mt-lg-0">Emillie <br> Jonas</h1>
+                                <h1 class="fw-normal lh-1 mt-4 mt-lg-0">Peter <br> Jonas</h1>
                                 <h4 class="fw-light">England</h4>
                                 <p class="mt-4 pe-xxl-8">Eduprix is an ideal location for anybody who wants to learn something new or share what they know with others.  Eduprix is a worldwide platform for online learning that helps to connect with one another via knowledge. It comes highly recommended from my side. </p>
                             </div>
@@ -43,7 +43,7 @@
                                 <div class="card border-0 h-100">
                                     <div class="card-body h-100 p-0 pe-4">
                                         <div class="d-flex align-items-start"> <img src="web/assets/img/gallery/rectangle.png" alt="rectangle" />
-                                            <img src="web/assets/img/gallery/student-review.png" alt="testimonials" width="315" />
+                                            <img src="web/assets/img/gallery/student2.jpg" alt="testimonials" width="315" />
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                 <!--/.bg-holder-->
                                 <h1 class="fw-normal lh-1 mt-4 mt-lg-0">Ainara <br> Vergara</h1>
                                 <h4 class="fw-light">USA</h4>
-                                <p class="mt-4 pe-xxl-8">Eduprix is an ideal location for anybody who wants to learn something new or share what they know with others.  Eduprix is a worldwide platform for online learning that helps to connect with one another via knowledge. It comes highly recommended from my side. </p>
+                                <p class="mt-4 pe-xxl-8">Eduprix stands out as a beacon of opportunity in the realm of online education, offering a diverse array of courses and subjects. Whether you're a curious beginner or a seasoned professional, there is something for everyone. The platform prides itself on its user-friendly interface, making learning accessible and enjoyable. With experts from various fields sharing their insights, Eduprix ensures that every course is not just informative, but also engaging and up-to-date with the latest industry trends. This rich educational environment fosters a community of learners who are passionate about expanding their horizons. </p>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                                 <!--/.bg-holder-->
                                 <h1 class="fw-normal lh-1 mt-4 mt-lg-0">Niek <br> Bove</h1>
                                 <h4 class="fw-light">Bangladesh</h4>
-                                <p class="mt-4 pe-xxl-8">Eduprix is an ideal location for anybody who wants to learn something new or share what they know with others.  Eduprix is a worldwide platform for online learning that helps to connect with one another via knowledge. It comes highly recommended from my side. </p>
+                                <p class="mt-4 pe-xxl-8">Moreover, Eduprix emphasizes on interactive learning, enabling students to not only absorb information but also apply it through practical assignments and projects. This hands-on approach ensures a deeper understanding and retention of knowledge. The platform also offers flexibility, allowing learners to study at their own pace and schedule, which is especially beneficial for those balancing other commitments. With its commitment to quality education and a global community of learners and educators, Eduprix is rapidly becoming a favored destination for those seeking to enrich their knowledge and skills in an increasingly digital world. </p>
                             </div>
                         </div>
                     </div>
