@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\admin\BookController;
-use App\Http\Controllers\admin\CategoryController;
-use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
