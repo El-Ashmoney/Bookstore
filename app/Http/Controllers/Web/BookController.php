@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -40,18 +41,21 @@ class BookController extends Controller
         // Update the overall rating for the book
         $book->rating = DB::table('book_ratings')->where('book_id', $bookId)->avg('rating');
         $book->save();
-
         return back()->with('message', 'Thank you for your rating!');
     }
 
     public function allBooks(){
-        $books = Book::paginate(4);
-        return view('web.all_books', compact('books'));
+        $books                      = Book::paginate(4);
+        $allUsers                   = User::count();
+        $formattedAllUsersCount     = number_format($allUsers);
+        return view('web.all_books', compact('books', 'formattedAllUsersCount'));
     }
 
     public function allRatedBooks(){
-        $books = Book::paginate(4);
-        return view('web.all_rated_books', compact('books'));
+        $books                      = Book::paginate(4);
+        $allUsers                   = User::count();
+        $formattedAllUsersCount     = number_format($allUsers);
+        return view('web.all_rated_books', compact('books', 'formattedAllUsersCount'));
     }
 
 }
