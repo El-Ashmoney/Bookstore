@@ -3650,13 +3650,41 @@ table.grid td {
 }
 
 
-.session_message{padding: 10px 20px; border-radius: 25px; background-color: rgba(255, 255, 255, 0.2);}
+.session_message {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Categories Page */
-.categories .add_category{margin-top: 50px;}
-.categories .categories_heading{text-align: center;}
-.categories .add_category .form-group{margin-bottom: 2rem;}
-.categories .add_category .form-group button i{font-size: 15px;}
-.show_categories{margin-top: 100px;}
-.show-books{margin-top: 25px;}
-.pagination{justify-content: center; flex-direction: row; align-items: center;}
+
+.categories .add_category {
+    margin-top: 50px;
+}
+
+.categories .categories_heading {
+    text-align: center;
+}
+
+.categories .add_category .form-group {
+    margin-bottom: 2rem;
+}
+
+.categories .add_category .form-group button i {
+    font-size: 15px;
+}
+
+.show_categories {
+    margin-top: 100px;
+}
+
+.show-books {
+    margin-top: 25px;
+}
+
+.pagination {
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
 
